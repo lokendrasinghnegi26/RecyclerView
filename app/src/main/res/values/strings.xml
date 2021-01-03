@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="todo">TODO</string>
+    <string name="textview1">TextView</string>
+    <string name="textview2">TextView</string>
+    <string-array name="Employee">
+        <item>Abhishek</item>
+        <item>Akash</item>
+        <item>Aman</item>
+        <item>Ashish</item>
+        <item>Deepak</item>
+        <item>Golu</item>
+        <item>Lokendra</item>
+        <item>Pawan</item>
+    </string-array>
+    <string-array name="Description">
+        <item>This is description</item>
+        <item>This is description</item>
+        <item>This is description</item>
+        <item>This is description</item>
+        <item>This is description</item>
+        <item>This is description</item>
+        <item>This is description</item>
+        <item>This is description</item>
+    </string-array>
+</resources>
