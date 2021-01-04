@@ -1,6 +1,7 @@
 package com.lokendrasingh.recyclerview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 public class MyOwnAdapter extends RecyclerView.Adapter<MyOwnAdapter.MyOwnHolder> {
     String data1[], data2[];
@@ -34,6 +36,16 @@ public class MyOwnAdapter extends RecyclerView.Adapter<MyOwnAdapter.MyOwnHolder>
     holder.t1.setText(data1[position]);
     holder.t2.setText(data2[position]);
     holder.image.setImageResource(img[position]);
+    holder.layout.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent= new Intent(ctx, SecondActivity.class);
+            intent.putExtra("title", data1[position]);
+            intent.putExtra("description",data2[position]);
+            intent.putExtra("image",img[position]);
+            ctx.startActivity(intent);
+        }
+    });
     }
 
     @Override
@@ -44,11 +56,13 @@ public class MyOwnAdapter extends RecyclerView.Adapter<MyOwnAdapter.MyOwnHolder>
     public class MyOwnHolder extends RecyclerView.ViewHolder {          // ViewHolder class will initialize all the view at a once
         TextView t1, t2;
         ImageView image;
+        ConstraintLayout layout;
         public MyOwnHolder(@NonNull View itemView) {
             super(itemView);
             t1= itemView.findViewById(R.id.textView1);
             t2= itemView.findViewById(R.id.textView2);
             image= itemView.findViewById(R.id.imageView);
+            layout= itemView.findViewById(R.id.mainlayout);
         }
     }
 }
